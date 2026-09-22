@@ -1,3 +1,4 @@
+README.md
 pyproject.toml
 src/moth_honest/__init__.py
 src/moth_honest/cli.py

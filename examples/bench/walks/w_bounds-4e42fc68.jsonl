@@ -1,0 +1,2 @@
+{"chain_hash": "48624301d0fa0c0d", "dice_seed": 177, "genome_hash": "4e42fc68998c266f", "kind": "HUNT/v1", "producer": {"tool": "moth-cells", "version": "0.1.0"}, "row_hash": "b6b9be96511181ae", "schema_version": "1.0", "start_pos": 0, "terrain_hash": "525a9d63e31a2e16", "ticks": 30}
+{"chain_hash": "d3a569ff4198db1f", "dice_seed": 177, "evidence": "771904eebad5b67f", "file": "parse.c", "fn": "parse", "genome_hash": "4e42fc68998c266f", "kind": "FINDING/v1", "row_hash": "5ce2fd5f1407e363", "taint_path": ["parse.c:parse"], "tick": 1}
