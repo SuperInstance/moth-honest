@@ -1,0 +1,8 @@
+{"chain_hash":"321a5c4c7b76de49","corpus_hash":"0fc51d68d6c2d1c0","cost":{"claims_spent":3,"exercises_run":7,"wall_ms":12},"hunter_id":"mock-regex-hunter-0.1","kind":"EVAL/v1","producer":{"tool":"moth-honest","version":"0.1.0"},"row_hash":"948b32106de2f947","schema_version":"1.0","totals":{"correct_refusals":1,"f1_q16":37448,"fn":2,"fp":1,"precision_q16":43690,"recall_q16":32768,"tp":2}}
+{"chain_hash":"165952bc36961581","exercise_id":"c-clean-001","fn":0,"fp":0,"kind":"VERDICT/v1","outcome":"REFUSAL","row_hash":"16131b1b54ad4b6f","tp":0}
+{"chain_hash":"f331d4cd3aa9de8b","exercise_id":"c-double-free-001","fn":1,"fp":0,"kind":"VERDICT/v1","outcome":"REFUTED","row_hash":"9dc7b51a41fbd0c4","tp":0}
+{"chain_hash":"8fa200cb243eee4e","exercise_id":"c-overflow-001","fn":0,"fp":0,"kind":"VERDICT/v1","outcome":"CONFIRMED","row_hash":"d96c27dce60777fc","tp":1}
+{"chain_hash":"d27522d33667b8c1","exercise_id":"js-clean-001","fn":0,"fp":0,"kind":"VERDICT/v1","outcome":"REFUTED","row_hash":"b910fefad844bdce","tp":0}
+{"chain_hash":"d4604b0d2c5c282a","exercise_id":"js-eval-001","fn":0,"fp":0,"kind":"VERDICT/v1","outcome":"CONFIRMED","row_hash":"96f278548fdfe5fe","tp":1}
+{"chain_hash":"5d130112ba950e16","exercise_id":"rust-clean-001","fn":0,"fp":1,"kind":"VERDICT/v1","outcome":"REFUTED","row_hash":"36d0ff85f1ba46a2","tp":0}
+{"chain_hash":"91a3b203e863130c","exercise_id":"rust-unsafe-write-001","fn":1,"fp":0,"kind":"VERDICT/v1","outcome":"REFUTED","row_hash":"074f8cb9977519c1","tp":0}
