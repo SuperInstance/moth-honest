@@ -32,6 +32,24 @@ Every evaluation books its cost: `claims_spent`, `exercises_run`, `wall_ms`.
 A hunter that spends 400 claims to find 4 bugs is scored against one that
 spends 40. Accuracy without cost is how rumor mills dress up for dinner.
 
+## Strong inference (pre-registration)
+
+`moth_honest.prereg`: a hunter can pre-register a round BEFORE seeing
+the outcome — exactly two rival hypotheses, each naming the observation
+that would exclude it, plus a `predict_refusal` commitment. Refusals are
+then booked against ground-truth labels, not vibes:
+
+- **correct-restraint** — predicted restraint on a clean exercise
+- **missed-bug** — restraint on an exercise with planted bugs
+- **abstention** — restraint or silence WITHOUT a prior commitment
+  (a refusal only counts as restraint when the receipt shows it was
+  predicted; unpredicated silence is abstention, and the difference
+  between a gate and a vibe is the booking)
+
+Surviving hypotheses are corroborated, never "confirmed" — that is the
+strong-inference part. Rows seal as hash-chained PREREG/v1 with the same
+corpus binding and tamper behavior as EVAL/v1.
+
 ## Usage
 
 ```bash
@@ -85,8 +103,8 @@ moth-runner    campaigns, witness.jsonl, throttle seam (after cells)
 
 ## Tests
 
-33 green. Receipt integrity, tamper/insert detection, corpus binding,
-evaluation semantics, CLI roundtrip, Q16 pins:
+60 green. Receipt integrity, tamper/insert detection, corpus binding,
+evaluation semantics, CLI roundtrip, Q16 pins, pre-registration labels:
 
 ```bash
 python -m pytest
