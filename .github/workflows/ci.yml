@@ -1,0 +1,28 @@
+name: ci
+
+on:
+  push:
+    branches: [main, "**"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -e . pytest
+      - name: Test
+        run: python -m pytest
+      - name: Mock hunter end-to-end (receipt gate)
+        run: |
+          python examples/mock_hunter.py
+          python -m moth_honest.cli verify examples/mock_hunter.eval.jsonl
+      - name: Example receipt committed matches a fresh run
+        run: |
+          python examples/mock_hunter.py >/dev/null
+          git diff --exit-code -- examples/mock_hunter.eval.jsonl \
+            || (echo "committed receipt is stale: regenerate with examples/mock_hunter.py" && exit 1)
